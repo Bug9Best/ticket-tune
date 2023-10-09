@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ConcertService } from 'src/app/service/concert/concert.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,15 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
   searchText: string = '';
-  listConsert: any[] = [1, 2, 3, 4, 5, 6, 7]
+  listConcert: any = []
 
-  constructor() { }
-  getConsert() { }
+  constructor(private concertService: ConcertService) {
+    this.getConscert();
+  }
+  getConscert() { 
+    this.concertService.getConcert().subscribe(res => {
+      this.listConcert = res
+    })
+  }
   search() { }
 }

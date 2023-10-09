@@ -3,12 +3,12 @@
     <div class="shadow-2 border-round-sm p-3">
       <div class="grid">
         <div class="col-5">
-          <img src="../../../assets//template.jpg" alt="" height="380" width="350">
+          <img [src]="concert.concert.img_url" alt="" height="380" width="350">
         </div>
         <div class="col-7 flex flex-column justify-content-between">
           <div>
-            <div class="text-xl font-bold mb-2">Title</div>
-            <div class="mb-3">Description</div>
+            <div class="text-xl font-bold mb-2">{{ concert.concert.name }}</div>
+            <div class="mb-3">{{ concert.concert.details }}</div>
           </div>
         </div>
       </div>
@@ -20,19 +20,23 @@
           Ticket Price :
         </div>
         <div class="col-7">
-          <p-dropdown [appendTo]="'body'">
+          <p-dropdown [(ngModel)]="selectedTicket" [appendTo]="'body'" [options]="listPrice" optionLabel="label">
           </p-dropdown>
         </div>
       </div>
 
-      <div class="grid">
-        <div class="col-5">
-          Ticket Amount :
-        </div>
-        <div class="col-7">
-          <input type="text" class="w-full" pInputText>
+      <div [formGroup]="formData">
+        <div class="grid">
+          <div class="col-5">
+            Ticket Amount :
+          </div>
+          <div class="col-7">
+            <input type="text" class="w-full" pInputText formControlName="amount">
+          </div>
         </div>
       </div>
+
+
       <div class="grid">
         <div class="col-5">
           Promotion
@@ -48,7 +52,7 @@
           SubTotal
         </div>
         <div class="col-7 flex justify-content-end">
-          500 THB
+          {{ subtotal}} THB
         </div>
       </div>
       <div class="grid">
@@ -56,7 +60,7 @@
           Promotion
         </div>
         <div class="col-7 flex justify-content-end">
-          500 THB
+          {{ promotion }} THB
         </div>
       </div>
       <p-divider></p-divider>
@@ -65,7 +69,7 @@
           Total
         </div>
         <div class="col-7 flex justify-content-end font-bold">
-          500 THB
+          {{ total }} THB
         </div>
       </div>
       <p-divider></p-divider>
@@ -79,7 +83,7 @@
       </div>
       <p-divider></p-divider>
       <div>
-        <button pButton label="Buy Ticket" class="w-full"></button>
+        <button pButton label="Buy Ticket" class="w-full" (click)="test()"></button>
       </div>
     </div>
   </div>

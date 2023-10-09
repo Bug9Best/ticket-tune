@@ -11,34 +11,36 @@
           <div class="flex justify-content-center my-3">
             <p-avatar icon="pi pi-user pis" shape="circle" [style]="{ 'width': '10rem','height': '10rem' }"></p-avatar>
           </div>
-          <div class="grid mb-2">
-            <div class="col-12">Name</div>
-            <div class="col-12 -mt-2">
-              <input class="w-full" placeholder="Name" type="text" pInputText>
+          <div [formGroup]="formData">
+            <div class="grid mb-2">
+              <div class="col-12">First Name</div>
+              <div class="col-12 -mt-2">
+                <input class="w-full" placeholder="Name" type="text" pInputText formControlName="first_name">
+              </div>
             </div>
-          </div>
-          <div class="grid mb-2">
-            <div class="col-12">SurName</div>
-            <div class="col-12 -mt-2">
-              <input class="w-full" placeholder="SurName" type="text" pInputText>
+            <div class="grid mb-2">
+              <div class="col-12">Last Name</div>
+              <div class="col-12 -mt-2">
+                <input class="w-full" placeholder="SurName" type="text" pInputText formControlName="last_name">
+              </div>
             </div>
-          </div>
-          <div class="grid mb-2">
-            <div class="col-12">Email</div>
-            <div class="col-12 -mt-2">
-              <input class="w-full" placeholder="Email" type="text" pInputText>
+            <div class="grid mb-2">
+              <div class="col-12">Email</div>
+              <div class="col-12 -mt-2">
+                <input class="w-full" placeholder="Email" type="text" pInputText formControlName="email">
+              </div>
             </div>
-          </div>
-          <div class="grid mb-2">
-            <div class="col-12">Phone Number</div>
-            <div class="col-12 -mt-2">
-              <input class="w-full" placeholder="Phone Number" type="text" pInputText>
+            <div class="grid mb-2">
+              <div class="col-12">Phone Number</div>
+              <div class="col-12 -mt-2">
+                <input class="w-full" placeholder="Phone Number" type="text" pInputText formControlName="tel">
+              </div>
             </div>
-          </div>
-          <div class="grid">
-            <div class="col-12">Password</div>
-            <div class="col-12 -mt-2">
-              <input class="w-full" placeholder="Password" type="text" pInputText>
+            <div class="grid">
+              <div class="col-12">Password</div>
+              <div class="col-12 -mt-2">
+                <input class="w-full" placeholder="Password" type="text" pInputText formControlName="password">
+              </div>
             </div>
           </div>
           <div class="">

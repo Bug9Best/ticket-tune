@@ -6,11 +6,11 @@
     </span>
 
     <div class="grid-container mt-3">
-      <ng-container *ngFor="let item of listConsert">
-        <div class="shadow-2 border-round-sm p-2 cursor-pointer" [routerLink]="['/detail', item]">
-          <img src="../../../assets//template.jpg" style="width: 100%;">
-          <div class="text-lg font-bold my-2">Title</div>
-          <div>SubTitle</div>
+      <ng-container *ngFor="let item of listConcert">
+        <div class="shadow-2 border-round-sm p-2 cursor-pointer" [routerLink]="['/detail', item.concert_id]">
+          <img [src]="item.img_url" style="width: 100%;">
+          <div class="text-lg font-bold my-2">{{ item.name }}</div>
+          <div>{{ item.details }}</div>
         </div>
       </ng-container>
     </div>
